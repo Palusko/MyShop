@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-  public class Product
+  public class Product : BaseEntity
   {
-    public string Id { get; set; }
+    //public string Id { get; set; } we don't need it, because we inherit Id from BaseEntity
 
     [StringLength(20)]
     [DisplayName("Product Name")]
@@ -22,9 +22,11 @@ namespace MyShop.Core.Models
     public string Category { get; set; }
     public string Image { get; set; }
 
+    /*  we don't need it, because we inherit Id from BaseEntity
     public Product()
     {
       Id = Guid.NewGuid().ToString();
     }
+    */
   }
 }

@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-  public class ProductCategory
+  public class ProductCategory : BaseEntity
   {
-    public string Id { get; set; }
+    //public string Id { get; set; }  we don't need it, because we inherit Id from BaseEntity
     public string Category { get; set; }
 
+
+    /*   we don't need it, because we inherit Id from BaseEntity
     public ProductCategory()
     {
       this.Id = Guid.NewGuid().ToString();
     }
+    */
   }
 }
