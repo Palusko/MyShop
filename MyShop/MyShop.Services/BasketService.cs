@@ -64,7 +64,7 @@ namespace MyShop.Services
       return basket;
     }
 
-    public void AddBasket(HttpContextBase httpContext, string productId)
+    public void AddToBasket(HttpContextBase httpContext, string productId)
     {
       var basket = GetBasket(httpContext, true);
       var item = basket.BasketItems.FirstOrDefault(i => i.ProductId == productId);
@@ -106,7 +106,7 @@ namespace MyShop.Services
       if (basket != null)
       {
         var results = (from b in basket.BasketItems
-                       join p in productContext.Collection() on b.Id equals p.Id
+                       join p in productContext.Collection() on b.ProductId equals p.Id
                        select new BasketItemViewModel()
                        {
                          Id = b.Id,
